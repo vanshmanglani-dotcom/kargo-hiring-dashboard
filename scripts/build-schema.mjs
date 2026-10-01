@@ -1,5 +1,5 @@
 // Parses rubric.txt and writes:
-//   supabase/schema.sql   – tables + rubric_criteria seed rows (run once in the Supabase SQL editor)
+//   supabase/schema.sql   – tables + kargo_rubric_criteria seed rows (run once in the Supabase SQL editor)
 //   lib/rubric-seed.json  – same rubric, used by the local (no-Supabase) dev store
 //   lib/schema-sql.ts     – the SQL as a string, so the app can create its own tables on first run
 // Runs automatically before `npm run dev` / `npm run build`.
@@ -39,7 +39,7 @@ const sql = `-- Kargo Hiring Dashboard — database schema
 create extension if not exists pgcrypto;
 
 -- The rubric every candidate is scored against (one row per criterion per role).
-create table if not exists rubric_criteria (
+create table if not exists kargo_rubric_criteria (
   id          serial primary key,
   role        text not null check (role in ('PM','SPM')),
   name        text not null,
@@ -51,7 +51,7 @@ create table if not exists rubric_criteria (
 );
 
 -- Candidate record. Contains NO personal details: cv_content is the CV with name/email/phone stripped.
-create table if not exists candidates (
+create table if not exists kargo_candidates (
   id              uuid primary key default gen_random_uuid(),
   created_at      timestamptz not null default now(),
   file_name       text,
@@ -72,24 +72,24 @@ create table if not exists candidates (
   sent_to         text,
   sent_message_id text
 );
-create index if not exists candidates_role_idx on candidates (applied_role);
+create index if not exists kargo_candidates_role_idx on kargo_candidates (applied_role);
 
 -- Personal details live in their own table and are never sent to any AI step.
-create table if not exists candidate_pii (
-  candidate_id uuid primary key references candidates(id) on delete cascade,
+create table if not exists kargo_candidate_pii (
+  candidate_id uuid primary key references kargo_candidates(id) on delete cascade,
   name         text,
   email        text,
   phone        text
 );
 
 -- Lock the tables down: only the server (service-role key) can read or write.
-alter table rubric_criteria enable row level security;
-alter table candidates      enable row level security;
-alter table candidate_pii   enable row level security;
+alter table kargo_rubric_criteria enable row level security;
+alter table kargo_candidates enable row level security;
+alter table kargo_candidate_pii enable row level security;
 
 -- Rubric seed — generated from rubric.txt by scripts/build-schema.mjs
-delete from rubric_criteria;
-insert into rubric_criteria (role, name, description, weight, source, position) values
+delete from kargo_rubric_criteria;
+insert into kargo_rubric_criteria (role, name, description, weight, source, position) values
 ${all.map((c) => `  (${q(c.role)}, ${q(c.name)}, ${q(c.description)}, ${c.weight}, ${q(c.source)}, ${c.position})`).join(',\n')};
 `;
 
