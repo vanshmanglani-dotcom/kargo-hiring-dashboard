@@ -34,33 +34,33 @@ class SupabaseStore implements Store {
   }
   async rubric() {
     await ensureSchema();
-    return this.check(await this.db.from('rubric_criteria').select('*').order('role').order('position')) as Criterion[];
+    return this.check(await this.db.from('kargo_rubric_criteria').select('*').order('role').order('position')) as Criterion[];
   }
   async listCandidates() {
     await ensureSchema();
-    return this.check(await this.db.from('candidates').select('*').order('created_at')) as Candidate[];
+    return this.check(await this.db.from('kargo_candidates').select('*').order('created_at')) as Candidate[];
   }
   async getCandidate(id: string) {
-    return this.check(await this.db.from('candidates').select('*').eq('id', id).maybeSingle()) as Candidate | null;
+    return this.check(await this.db.from('kargo_candidates').select('*').eq('id', id).maybeSingle()) as Candidate | null;
   }
   async insertCandidate(c: Partial<Candidate>) {
     await ensureSchema();
-    return this.check(await this.db.from('candidates').insert(c).select('*').single()) as Candidate;
+    return this.check(await this.db.from('kargo_candidates').insert(c).select('*').single()) as Candidate;
   }
   async updateCandidate(id: string, patch: Partial<Candidate>) {
-    this.check(await this.db.from('candidates').update(patch).eq('id', id));
+    this.check(await this.db.from('kargo_candidates').update(patch).eq('id', id));
   }
   async deleteCandidate(id: string) {
-    this.check(await this.db.from('candidates').delete().eq('id', id));
+    this.check(await this.db.from('kargo_candidates').delete().eq('id', id));
   }
   async listPII() {
-    return this.check(await this.db.from('candidate_pii').select('*')) as PII[];
+    return this.check(await this.db.from('kargo_candidate_pii').select('*')) as PII[];
   }
   async getPII(id: string) {
-    return this.check(await this.db.from('candidate_pii').select('*').eq('candidate_id', id).maybeSingle()) as PII | null;
+    return this.check(await this.db.from('kargo_candidate_pii').select('*').eq('candidate_id', id).maybeSingle()) as PII | null;
   }
   async upsertPII(p: PII) {
-    this.check(await this.db.from('candidate_pii').upsert(p));
+    this.check(await this.db.from('kargo_candidate_pii').upsert(p));
   }
 }
 
