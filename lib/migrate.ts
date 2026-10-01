@@ -19,9 +19,9 @@ async function run() {
   if (!url) return; // tables were created manually
   const sql = postgres(url, { ssl: 'require', max: 1, prepare: false, onnotice: () => {} });
   try {
-    const [{ t }] = await sql`select to_regclass('public.rubric_criteria') as t`;
+    const [{ t }] = await sql`select to_regclass('public.kargo_rubric_criteria') as t`;
     if (t) {
-      const [{ n }] = await sql`select count(*)::int as n from rubric_criteria`;
+      const [{ n }] = await sql`select count(*)::int as n from kargo_rubric_criteria`;
       if (n > 0) return;
     }
     await sql.unsafe(SCHEMA_SQL);
