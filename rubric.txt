@@ -1,0 +1,100 @@
+KARGO HIRING RUBRIC — Product Manager (PM) & Senior Product Manager (SPM)
+Derived from the 8 past-hire profiles (hires/) and their performance ratings — NOT from the job descriptions.
+
+=====================================================================
+STEP 1 — PATTERNS: what the "Exceeds" hires share that the others lack
+=====================================================================
+Exceeds Expectations: Rohan Desai (Eng), Sunita Krishnamurthy (Ops), Aditya Shetty (Sales), Meghna Tiwari (CS), Lavanya Iyer (PM)
+Meets / Below:        Vikram Nair (PM, Meets), Rahul Bose (Marketing, Meets), Preetham Rao (Backend Eng, Below)
+
+Pattern 1 — They did the user's job before building for the user.
+  Every Exceeds hire spent real time inside freight / logistics operations doing the operational work by hand:
+  Rohan ran 180+ shipments/month of BoL and customs docs at a CHA firm in JNPT; Sunita managed 200+ shipments/month of
+  documentation at Trident Freight; Aditya handled berth, detention and DO escalations at a JNPT terminal; Meghna fixed
+  a customs hold overnight at a freight forwarder; Lavanya ran carrier allocation for 800+ shipments/month at Mahindra
+  Logistics. None of the Meets/Below hires did. Sharpest contrast: Preetham's CV mirrors Rohan's almost line for line
+  (PostgreSQL indexing fix, legacy migration, mentored two juniors) — but Preetham only touched logistics through APIs
+  from a desk, and was rated Below. Rohan worked the docs desk first.
+
+Pattern 2 — They spotted an unowned problem, built a fix nobody asked for, and peers adopted it voluntarily.
+  Rohan's Excel tracker (adopted by the 12-person ops team in 2 weeks) and his weekend BoL prototype (30 colleagues in a
+  month); Sunita's weekend re-design of the documentation intake when the FMS vendor changed formats (kept permanently);
+  Meghna's onboarding checklist and 30-60-90 framework (became the team standard); Lavanya's Excel→Tableau visibility
+  dashboard (adopted by 2 other regional teams); Aditya's first case-study programme (now the whole team's collateral).
+  Vikram's PRD template is the weak version: a process artefact for his own function, not a fix for an operational pain.
+
+Pattern 3 — They name what failed, kill what doesn't work, and own the aftermath.
+  Aditya wrote a post-mortem on a 4-month deal he LOST and it became standard practice; Lavanya killed 2 of her own
+  features on usage data and wrote both the internal and customer-facing outage post-mortems; Sunita and Meghna owned
+  crises end-to-end (vendor format change, 7pm customs hold) without escalating. Vikram, Rahul and Preetham's CVs are
+  wins-only lists — certifications, conference talks, % targets hit — with no failure, kill, or crisis owned.
+
+Note on what does NOT predict success here: credentials and polish. Vikram had the strongest paper profile
+(XLRI MBA, Product School CPO, Reforge, conference speaker) and was rated Meets. Do not reward certifications,
+brand-name schools, or title inflation.
+
+=====================================================================
+STEP 2/3 — RUBRIC
+Scoring: each criterion is scored 0–5 using the anchors below.
+Weighted score (0–100) = Σ (score / 5 × weight).
+=====================================================================
+
+---------------------------------------------------------------------
+PRODUCT MANAGER (PM)
+---------------------------------------------------------------------
+Criterion name: Operational Ground Truth
+What a strong candidate looks like: Has personally done hands-on operational work in freight, logistics, supply chain, warehousing, ports or an equally operations-heavy field — handling documents, shipments, carriers, exceptions or customers with their own hands — for at least 1 year, with concrete volumes (e.g. "managed 180+ shipments/month"). 5 = 2+ years of hands-on logistics/freight operations with volumes. 3 = hands-on operations in an adjacent ops-heavy domain, or <1 year in logistics. 1 = only met operators through calls, research or integrations. 0 = no operational exposure at all.
+Weight: 30%
+Source: Rohan Desai, Sunita Krishnamurthy, Aditya Shetty, Meghna Tiwari, Lavanya Iyer (contrast: Preetham Rao)
+
+Criterion name: Unprompted Builder
+What a strong candidate looks like: The CV shows at least one case where they noticed a problem nobody had assigned to them, built a working fix themselves (tool, tracker, checklist, prototype, process), and other people adopted it without being told to — with the adoption stated (who, how many, how fast). 5 = two or more such cases with stated adoption beyond their own team. 3 = one clear case with stated adoption. 1 = improvements that were part of the assigned job, or adoption not stated. 0 = none.
+Weight: 25%
+Source: Rohan Desai (Excel tracker, BoL prototype), Sunita Krishnamurthy, Meghna Tiwari, Lavanya Iyer, Aditya Shetty (contrast: Vikram Nair's PRD template)
+
+Criterion name: Kills & Post-mortems
+What a strong candidate looks like: Explicitly names something that did not work — a feature they killed, a deal they lost, an outage or mistake — and states what they did with it (killed it on data, wrote the post-mortem, changed the process). 5 = killed/abandoned their own work based on evidence AND documented the learning that others now use. 3 = one named failure or kill with the action taken. 1 = vague mention of "iterating" or "learning". 0 = wins-only CV.
+Weight: 15%
+Source: Lavanya Iyer (killed 2 features, outage post-mortem), Aditya Shetty (lost-deal post-mortem) (contrast: Vikram Nair, Rahul Bose)
+
+Criterion name: Ownership Under Pressure
+What a strong candidate looks like: Describes a specific time-critical situation (outage, vendor change, customs hold, deadline, sudden volume spike) that they personally resolved end-to-end, without escalating, with the outcome stated. 5 = multiple such situations, resolved with stated outcomes. 3 = one clear situation with outcome. 1 = generic "works well under pressure". 0 = none.
+Weight: 15%
+Source: Sunita Krishnamurthy (weekend workflow redesign), Meghna Tiwari (overnight customs hold), Rohan Desai (time-pressured vendor migration)
+
+Criterion name: Sole Ownership
+What a strong candidate looks like: Has owned an area as the only accountable person — sole PM, no layer above them in their function, or running a full cycle end-to-end alone. 5 = sole owner of a product area or function for 12+ months. 3 = owned features end-to-end inside a team with a senior above. 1 = supported others who made the calls. 0 = no ownership evidence.
+Weight: 15%
+Source: Lavanya Iyer (sole PM), Rohan Desai ("without a product layer"), Aditya Shetty ("no account manager layer"), Sunita Krishnamurthy (independent) (contrast: Vikram Nair, one of a 4-PM team)
+
+PM total: 30 + 25 + 15 + 15 + 15 = 100%
+
+---------------------------------------------------------------------
+SENIOR PRODUCT MANAGER (SPM)
+---------------------------------------------------------------------
+Criterion name: Operational Ground Truth
+What a strong candidate looks like: 2+ years doing hands-on operational work in freight, ports, customs, logistics or supply chain, AND evidence that this knowledge directly shaped a product decision (e.g. "designed the integration because I knew what the data actually contained"). 5 = 2+ years hands-on logistics ops and a product call explicitly driven by it. 3 = hands-on ops experience but no stated link to product decisions, or adjacent ops domain. 1 = domain knowledge only from the product side. 0 = none.
+Weight: 25%
+Source: Rohan Desai, Sunita Krishnamurthy, Lavanya Iyer, Aditya Shetty, Meghna Tiwari (contrast: Preetham Rao)
+
+Criterion name: Sole Ownership
+What a strong candidate looks like: Has been the most senior product decision-maker in the room — sole/most-senior PM or head of product with no PM manager above, reporting to a founder/CEO — for 2+ years, making consequential calls (architecture, build vs. configure, what not to build) and living with them. 5 = 2+ years as the senior-most PM with a named consequential call. 3 = 1–2 years sole ownership, or a large area owned under a senior PM. 1 = owned features while others set direction. 0 = none.
+Weight: 25%
+Source: Lavanya Iyer (sole PM), Rohan Desai (most senior engineer, no product layer), Sunita Krishnamurthy (independent consultant) (contrast: Vikram Nair)
+
+Criterion name: Ownership Under Pressure
+What a strong candidate looks like: Has led others through a time-critical situation (outage, shift crisis, migration, inspection, customer escalation) and resolved it end-to-end, with the outcome stated — at SPM the bar is leading a team or the whole company through it, not just personal heroics. 5 = led a team/organisation through multiple crises with stated outcomes. 3 = one clear crisis owned personally. 1 = generic claim. 0 = none.
+Weight: 20%
+Source: Rohan Desai (P1 reduction, vendor migration), Sunita Krishnamurthy, Meghna Tiwari, Lavanya Iyer (outage post-mortem)
+
+Criterion name: Kills & Post-mortems
+What a strong candidate looks like: Names multiple things they killed, reversed or failed at — ideally including their own ideas — and shows the learning became a team practice or standard. 5 = killed their own initiative on evidence AND institutionalised the learning. 3 = one named kill/failure with action. 1 = vague. 0 = wins-only CV.
+Weight: 15%
+Source: Lavanya Iyer, Aditya Shetty (contrast: Vikram Nair, Rahul Bose, Preetham Rao)
+
+Criterion name: Unprompted Builder
+What a strong candidate looks like: Has built (or had built) a tool, process or standard nobody asked for, which was then adopted across teams or sites — at SPM, evidence that they set standards others now follow (frameworks, templates, practices adopted beyond their own team). 5 = cross-team / cross-site adoption of something they originated, more than once. 3 = one case adopted by their own team. 1 = improvements within the assigned job. 0 = none.
+Weight: 15%
+Source: Rohan Desai, Sunita Krishnamurthy, Meghna Tiwari, Lavanya Iyer, Aditya Shetty
+
+SPM total: 25 + 25 + 20 + 15 + 15 = 100%

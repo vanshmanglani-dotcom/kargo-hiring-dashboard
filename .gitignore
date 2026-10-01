@@ -1,0 +1,13 @@
+node_modules
+.next
+.env
+.env.local
+.env*.local
+.data
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+package-lock.json
+lib/rubric-seed.json
+lib/schema-sql.ts
+supabase/schema.sql

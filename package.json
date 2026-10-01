@@ -1,0 +1,30 @@
+{
+  "name": "kargo-hiring-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "predev": "node scripts/build-schema.mjs",
+    "dev": "next dev",
+    "prebuild": "node scripts/build-schema.mjs",
+    "build": "next build",
+    "start": "next start",
+    "schema": "node scripts/build-schema.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.117.2",
+    "ai": "5.0.271",
+    "mammoth": "1.13.0",
+    "next": "15.5.27",
+    "postgres": "3.4.9",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "resend": "6.31.0",
+    "server-only": "0.0.1",
+    "unpdf": "1.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.4",
+    "@types/react": "19.3.0",
+    "typescript": "5.9.3"
+  }
+}
